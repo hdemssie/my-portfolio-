@@ -12,7 +12,8 @@ namespace weather {
                 templateUrl: '/ngApp/views/home.html',
                 controller: weather.Controllers.HomeController,
                 controllerAs: 'controller'
-            })
+            });
+        /*
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/views/about.html',
@@ -23,7 +24,7 @@ namespace weather {
                 url: '/notFound',
                 templateUrl: '/ngApp/views/notFound.html'
             });
-
+        */
         // Handle request for non-existent route
         $urlRouterProvider.otherwise('/notFound');
 
