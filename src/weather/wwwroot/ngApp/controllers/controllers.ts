@@ -1,13 +1,31 @@
 
 namespace weather.Controllers {
-    const apiURL = "http://api.openweathermap.org/data/2.5/weather?q=";
-    const apiKey = "&appid=ccb0dadab7f2ccc9acd0fa537b1eb0ab";
+    //const apiURL = "http://api.openweathermap.org/data/2.5/weather?q=";
+    //const apiKey = "&appid=ccb0dadab7f2ccc9acd0fa537b1eb0ab";
 
     export class HomeController {
+        public showModal(animalname: string) {
+            this.$uibModal.open({
+                templateUrl: '/ngApp/dialog.htm',
+                controller: 'DialogController',
+                controllerAs: 'modal',
+                resolve: {
+                    animalName: () => animalname
+                },
+                size: 'sm'
+                })
+        }
+        constructor(private $uibModal: angular.ui.bootstrap.IModalService) { }
+}
+
+export class AboutController {
+    public Message = 'Hello form the about page!';
+}
+
+       /*
 
         public search;
         public forecast;
-
         fetch() {
             if (this.search) {
                 console.log(`searching......`);
@@ -19,7 +37,7 @@ namespace weather.Controllers {
         }
         constructor(private $http: ng.IHttpService) { }
 
-   
+   */
 
     }
     /* {
@@ -65,4 +83,4 @@ namespace weather.Controllers {
                   "cod": 200
       }
   */
-}
+//}
